@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "cBAsXsF8UjQoN1e3x8ztc3Q5k1noPkCrAmdAwceu7ZI=",
+  "Source": "DomainHealthToolkit.api",
+  "BasePath": "_content/DomainHealthToolkit.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

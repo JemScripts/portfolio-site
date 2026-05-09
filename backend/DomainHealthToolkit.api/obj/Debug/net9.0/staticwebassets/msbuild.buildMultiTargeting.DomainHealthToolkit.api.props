@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DomainHealthToolkit.api.props" />
+</Project>

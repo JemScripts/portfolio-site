@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\DomainHealthToolkit.api.props" />
+</Project>
