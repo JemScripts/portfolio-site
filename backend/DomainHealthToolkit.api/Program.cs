@@ -7,6 +7,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<DomainHealthService>();
 builder.Services.AddScoped<DnsService>();
+builder.Services.AddScoped<SpfService>();
+builder.Services.AddScoped<HealthScoreService>();
 
 
 var app = builder.Build();
