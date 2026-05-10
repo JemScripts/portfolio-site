@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DomainHealthToolkit.api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bea4b15ded0505a30ea98e3469795d268385eb2f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e3f327fbe8ab1050e711bc1b8f9fec8392fca6f")]
 [assembly: System.Reflection.AssemblyProductAttribute("DomainHealthToolkit.api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DomainHealthToolkit.api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,3 +1,5 @@
+using DomainHealthToolkit.Api.Models;
+
 namespace DomainHealthToolkit.Api.Services;
 
 public class DomainHealthService
@@ -13,14 +15,27 @@ public class DomainHealthService
         _healthScore = healthScore;
     }
 
-    public async Task<object> CheckDomain(string domain)
+    public async Task<DomainHealthResponse> CheckDomain(string domain)
     {
+        var response = new DomainHealthResponse
+        {
+            Domain = domain
+        };
+        
         if (string.IsNullOrWhiteSpace(domain))
         {
-            return new
+            return new DomainHealthResponse
             {
-                Status = "Invalid",
-                Message = "Domain name is required"
+                Domain = domain,
+                Health = new HealthSection
+                {
+                    Status = "Invalid",
+                    Score = 0,
+                    Warnings = new List<string>
+                    {
+                        "Domain name is required"
+                    }
+                }
             };
         }
 
@@ -36,21 +51,30 @@ public class DomainHealthService
             spf);
 
 
-
-        return new
+        //Data Transfer Object mapping, explicitly controlling the logic that I want to hide from the client
+        response.Dns = new DnsSection
         {
-            Domain = domain,
-
-            DNS = new
-            {
-                A = aRecords,
-                MX = mxRecords,
-                TXT = txtRecords
-            },
-            SPF = spf,
-
-            Health = health
+            A = aRecords,
+            MX = mxRecords,
+            TXT = txtRecords
         };
+
+        response.Spf = new SpfSection
+        {
+            HasSpf = spf.HasSpf,
+            SpfRecord = spf.SpfRecord,
+            Severity = spf.Severity,
+            Warnings = spf.Warnings
+        };
+        
+        response.Health = new HealthSection
+        {
+            Score = health.Score,
+            Status = health.Status,
+            Warnings = health.Warnings
+        };
+
+        return response;
 
     }
 }

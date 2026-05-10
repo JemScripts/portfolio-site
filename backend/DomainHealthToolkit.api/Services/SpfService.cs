@@ -26,7 +26,7 @@ public class SpfService
 
         var spfRecord = result.SpfRecord;
 
-        if (spfRecord.Contains("all")){
+        if (spfRecord.Contains("+all")){
             result.Severity = "Critical";
             result.Warnings.Add("SPF record contains +all which is highly insecure");
         }

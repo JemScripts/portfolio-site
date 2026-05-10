@@ -17,7 +17,7 @@ namespace DomainHealthToolkit.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Check([FromQuery] string domain)
         {
-           var result = _service.CheckDomain(domain);
+           var result = await _service.CheckDomain(domain);
            return Ok(result);
         }
     }
