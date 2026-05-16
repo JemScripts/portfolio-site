@@ -41,58 +41,62 @@ export default function DomainHealthTool() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl bg-slate-50 p-8 font-sans">
-        <h1 className="text-3xl font-bold text-blue-600">Domain Health Checker</h1>
+    <div className="min-h-screen bg-slate-100">
+        <div className="mx-auto max-w-5xl p-8">
+            <div className="mx-auto max-w-5xl bg-slate-50 p-8 font-sans">
+                <h1 className="text-3xl font-bold text-blue-600">Domain Health Checker</h1>
 
-        <SearchBar
-            domain={domain}
-            setDomain={setDomain}
-            onSearch={handleCheckDomain}
-            loading={loading}
-        />
+                <SearchBar
+                    domain={domain}
+                    setDomain={setDomain}
+                    onSearch={handleCheckDomain}
+                    loading={loading}
+                />
 
-        {error && (
-            <ErrorBanner 
-                message={error}
-                onRetry={handleCheckDomain}
-            />
-        )}
+                {error && (
+                    <ErrorBanner 
+                        message={error}
+                        onRetry={handleCheckDomain}
+                    />
+                )}
 
-        {!data && !loading && !error && (
-            <div style={{
-                background: "white",
-                padding: "30px",
-                borderRadius: "12px",
-                boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
-                textAlign: "center"
-            }}>
-                <h2>
-                    Check a domain's DNS and email security posture
-                </h2>
-                <p style={{ color: "#6b7280", maxWidth: "600px", margin: "10px auto" }}>
-                    Enter a domain above to retrieve A, MX, TXT records, detect SPF configuration and generate a health score.
-                </p>
+                {!data && !loading && !error && (
+                    <div style={{
+                        background: "white",
+                        padding: "30px",
+                        borderRadius: "12px",
+                        boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
+                        textAlign: "center"
+                    }}>
+                        <h2>
+                            Check a domain's DNS and email security posture
+                        </h2>
+                        <p style={{ color: "#6b7280", maxWidth: "600px", margin: "10px auto" }}>
+                            Enter a domain above to retrieve A, MX, TXT records, detect SPF configuration and generate a health score.
+                        </p>
+                    </div>
+                )}
+
+                {loading && <SkeletonCards />}
+
+                {!loading && data && (
+                    <>
+                        <div className="mb-5 rounded-2xl bg-white p-5 shadow-sm">
+                            <h2 className="m-0 text-2xl font-semibold text-slate-900">{data.domain}</h2>
+                            <p className="mt-2 text-lg text-slate-700">
+                                Score: <b>{data.health.score}</b> - {data.health.status}
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-5 max-md:grid-cols-1">
+                            <HealthCard health = {data.health} />
+                            <SpfCard spf = {data.spf} />
+                            <DnsRecordsCard dns = {data.dns} />
+                        </div>
+                    </>
+                )}
             </div>
-        )}
-
-        {loading && <SkeletonCards />}
-
-        {!loading && data && (
-            <>
-                <div className="mb-5 rounded-2xl bg-white p-5 shadow-sm">
-                    <h2 className="m-0 text-2xl font-semibold text-slate-900">{data.domain}</h2>
-                    <p className="mt-2 text-lg text-slate-700">
-                        Score: <b>{data.health.score}</b> - {data.health.status}
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-5 max-md:grid-cols-1">
-                    <HealthCard health = {data.health} />
-                    <SpfCard spf = {data.spf} />
-                    <DnsRecordsCard dns = {data.dns} />
-                </div>
-            </>
-        )}
+        </div>
     </div>
   );
 }

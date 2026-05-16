@@ -15,7 +15,7 @@ export default function SpfCard({ spf }) {
     if(!spf) return null;
 
     return (
-        <div className="rounded-xl bg-white p-5 shadow-sm">
+        <div className="rounded-xl bg-white p-5 shadow-sm hover:shadow-md">
             <h3 className="mb-4 text-xl font-semibold text-slate-900">SPF</h3>
 
             <span className={`rounded-full px-3 py-1 text-xs font-bold text-white ${getSeverityColour(spf.severity)}`}>

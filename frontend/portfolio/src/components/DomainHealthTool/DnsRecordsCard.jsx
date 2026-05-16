@@ -2,7 +2,7 @@ export default function DnsRecordsCard({ dns }) {
     if (!dns) return null;
 
     return (
-        <div className="col-span-2 rounded-xl bg-white p-5 shadow-sm max-md:col-span-1">
+        <div className="col-span-2 rounded-xl bg-white p-5 shadow-sm transition hover:shadow-md max-md:col-span-1">
             <h3 className="mb-4 text-xl font-semibold text-slate-900">
                 DNS Records
             </h3>

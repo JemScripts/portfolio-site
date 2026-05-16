@@ -24,7 +24,7 @@ export default function HealthCard({ health }) {
     const status = health.status ?? "Unknown";
 
     return (
-        <div className="rounded-xl bg-white p-5 shadow-sm">
+        <div className="rounded-xl bg-white p-5 shadow-sm hover:shadow-md">
             <h3 className="mb-4 text-xl font-semibold text-slate-900">Health</h3>
 
             <div className="flex items-center gap-3">
