@@ -41,7 +41,7 @@ export default function DomainHealthTool() {
   };
 
   return (
-    <div style={{ padding: "30px", fontFamily: "sans-serif", maxWidth: "1000px", margin: "0 auto", background: "#f9fafb" }}>
+    <div className="mx-auto max-w-5xl bg-slate-50 p-8 font-sans">
         <h1 className="text-3xl font-bold text-blue-600">Domain Health Checker</h1>
 
         <SearchBar
@@ -79,16 +79,14 @@ export default function DomainHealthTool() {
 
         {!loading && data && (
             <>
-                <div style={{ background: "white", padding: "20px", borderRadius: "20px", marginBottom: "20px", boxShadow: "0 2px 10px rgba(0,0,0,0.08)" }}>
-                    <h2 style= {{ margin: 0 }}>{data.domain}</h2>
-                    <p style = {{ fontSize:"18px", marginTop: "10px" }}>
+                <div className="mb-5 rounded-2xl bg-white p-5 shadow-sm">
+                    <h2 className="m-0 text-2xl font-semibold text-slate-900">{data.domain}</h2>
+                    <p className="mt-2 text-lg text-slate-700">
                         Score: <b>{data.health.score}</b> - {data.health.status}
                     </p>
                 </div>
 
-                <div style = {{
-                    display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px"
-                }}>
+                <div className="grid grid-cols-2 gap-5 max-md:grid-cols-1">
                     <HealthCard health = {data.health} />
                     <SpfCard spf = {data.spf} />
                     <DnsRecordsCard dns = {data.dns} />

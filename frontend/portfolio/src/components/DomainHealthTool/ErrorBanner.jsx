@@ -1,18 +1,12 @@
 export default function ErrorBanner({ message, onRetry }) {
     return (
-        <div style={{ background: "#fee2e2", color: "#991b1b", padding: "12px", borderRadius: "8px", marginBottom: "15px", display: "flex", justifyContent: "space-between" }}>
-            <span>
+        <div className="mb-4 flex items-center justify-between rounded-lg border border-red-200 bg-red-50 p-4 text-red-800">
+            <span className="text-sm font-medium">
                 {message}
             </span>
         
             <button onClick={onRetry}
-            style={{
-                background: "#dc2626",
-                color: "white",
-                border: "none",
-                padding: "6px 10px",
-                borderRadius: "6px"
-            }}>
+            className="rounded-mg bg-red-600 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-red-700 ">
                 Retry
             </button>
 

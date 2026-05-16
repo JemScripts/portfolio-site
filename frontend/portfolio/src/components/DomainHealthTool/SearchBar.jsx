@@ -1,6 +1,6 @@
 export default function SearchBar({ domain, setDomain, onSearch, loading}) {
     return (
-        <div style={{ marginBottom: "25px", display: "flex", gap: "10px"}}>
+        <div className="mb-6 flex gap-3 max-sm:flex-col">
 
             <input 
                 value={domain}
@@ -9,25 +9,13 @@ export default function SearchBar({ domain, setDomain, onSearch, loading}) {
                     if (e.key === "Enter") onSearch();
                 }}
                 placeholder="Enter domain name"
-                style = {{
-                    padding: "8px",
-                    width: "300px",
-                    border: "1px solid #ccc",
-                    borderRadius: "6px"
-                }}
+                className="w-75 rounded-md border border-slate-300 px-3 py-2 outline-none transition focus:border-blue-500 max-sm:w-full"
             />
 
             <button 
                 onClick={onSearch} 
                 disabled={loading} 
-                style = {{
-                    padding: "8px",
-                    background: loading ? "#93c5fd" : "#2563eb",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "6px",
-                    cursor: loading ? "not-allowed" : "pointer"
-                }}
+                className="rounded-md bg-blue-600 px-4 py-2 font-medium text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-blue-300"
                 > 
                     {loading ? "Searching..." : "Search" } 
             </button>

@@ -1,19 +1,13 @@
 export default function DnsRecordsCard({ dns }) {
-    return (
-        <div style= {{     
-            gridColumn: "span 2",
-            background: "white",
-            padding: "20px",
-            borderRadius: "10px",
-            boxShadow: "0 2px 10px rgba(0,0,0,0.08)" }}
-        >
-            <h3>DNS Records</h3>
+    if (!dns) return null;
 
-        <div style={{
-            display:"grid",
-            gridTemplateColumns: "1fr 1fr 1fr",
-            gap: "15px"
-        }}>
+    return (
+        <div className="col-span-2 rounded-xl bg-white p-5 shadow-sm max-md:col-span-1">
+            <h3 className="mb-4 text-xl font-semibold text-slate-900">
+                DNS Records
+            </h3>
+
+        <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
                 <RecordList title="A Records" records={dns.a} />
                 <RecordList title="MX Records" records={dns.mx} />
                 <RecordList title="TXT Records" records={dns.text} />
@@ -24,22 +18,17 @@ export default function DnsRecordsCard({ dns }) {
 
 function RecordList({ title, records }) {
     return (
-        <div style={{
-        border: "1px solid #e5e7eb",
-        borderRadius: "8px",
-        padding: "12px",
-        background: "#f9fafb"
-        }}>
-            <h4 style={{ marginTop: 0 }}>{title}: </h4>
+        <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+            <h4 className="mb-3 font-semibold text-slate-900">{title} </h4>
             
             {records?.length > 0 ? (
-                <ul style={{ paddingLeft: "18px", wordBreak: "break-word" }}>
+                <ul className="space-y-2 wrap-break-word pl-4 text-sm text-slate-700">
                     {records.map((r, i) => (
                         <li key={i}>{r}</li>
                     ))}
                 </ul>
             ) : (
-                <p style={{ color: "##6b7280", fontStyle: "italic" }}>None found</p>
+                <p className="text-sm italic text-slate-500">None found</p>
             )}
         </div>
     );
