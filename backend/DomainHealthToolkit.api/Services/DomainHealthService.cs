@@ -22,6 +22,11 @@ public class DomainHealthService
             Domain = domain
         };
         
+        if (Uri.TryCreate(domain, UriKind.Absolute, out Uri? uri))
+        {
+            domain = uri.Host;
+        }
+
         if (string.IsNullOrWhiteSpace(domain))
         {
             return new DomainHealthResponse

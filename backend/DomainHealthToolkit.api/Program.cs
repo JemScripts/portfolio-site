@@ -16,7 +16,8 @@ builder.Services.AddCors(options =>
     {
         policy
             .WithOrigins("https://jemtekin.com",
-            "https://www.jemtekin.com")
+            "https://www.jemtekin.com",
+            "http://localhost:5173")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
