@@ -148,26 +148,38 @@ export default function Home(){
                         </h3>
 
                         <p className="mb-5 text-slate-600 leading-relaxed">
-                            Placeholder placeholder placeholder placeholder
+                            Placeholder - will update soon
                         </p>
 
                         <div className="mb-6 flex flex-wrap gap-2">
                             <span className="rounded-full bg-slate-100 px-3 py-1 text-sm">
-                                Technology #1
+                                React
                             </span>
 
                             <span className="rounded-full bg-slate-100 px-3 py-1 text-sm">
-                                Technology #2
+                                Tailwind
                             </span>
 
                             <span className="rounded-full bg-slate-100 px-3 py-1 text-sm">
-                                Technology #2
+                                PostgreSQL
+                            </span>
+                            
+                            <span className="rounded-full bg-slate-100 px-3 py-1 text-sm">
+                                JWT Auth
+                            </span>
+                            
+                            <span className="rounded-full bg-slate-100 px-3 py-1 text-sm">
+                                Express
+                            </span>
+
+                            <span className="rounded-full bg-slate-100 px-3 py-1 text-sm">
+                                Docker
                             </span>
                         </div>
 
                         <div className="flex gap-3">
                             <a
-                                href="/tools/domain-health"
+                                href="/"
                                 className="
                                     rounded-lg
                                     bg-blue-600
@@ -176,6 +188,7 @@ export default function Home(){
                                     text-white
                                     hover:bg-blue-700
                                     transition
+                                    cursor-not-allowed
                                 "
                             >
                                 Go to Project
@@ -206,15 +219,23 @@ export default function Home(){
 
                         <div className="mb-6 flex flex-wrap gap-2">
                             <span className="rounded-full bg-slate-100 px-3 py-1 text-sm">
-                                Technology #1
+                                React
                             </span>
 
                             <span className="rounded-full bg-slate-100 px-3 py-1 text-sm">
-                                Technology #2
+                                Express
                             </span>
 
                             <span className="rounded-full bg-slate-100 px-3 py-1 text-sm">
-                                Technology #2
+                                Sequelize
+                            </span>
+
+                            <span className="rounded-full bg-slate-100 px-3 py-1 text-sm">
+                                Tailwind
+                            </span>
+
+                            <span className="rounded-full bg-slate-100 px-3 py-1 text-sm">
+                                Axios
                             </span>
                         </div>
 
@@ -229,6 +250,7 @@ export default function Home(){
                                     text-white
                                     hover:bg-blue-700
                                     transition
+                                    cursor-not-allowed
                                 "
                             >
                                 Go to Project
@@ -259,15 +281,15 @@ export default function Home(){
 
                         <div className="mb-6 flex flex-wrap gap-2">
                             <span className="rounded-full bg-slate-100 px-3 py-1 text-sm">
-                                Technology #1
+                                Java
                             </span>
 
                             <span className="rounded-full bg-slate-100 px-3 py-1 text-sm">
-                                Technology #2
+                                Dreambot API
                             </span>
 
                             <span className="rounded-full bg-slate-100 px-3 py-1 text-sm">
-                                Technology #2
+                                Python
                             </span>
                         </div>
 
@@ -282,6 +304,7 @@ export default function Home(){
                                     text-white
                                     hover:bg-blue-700
                                     transition
+                                    cursor-not-allowed
                                 "
                             >
                                 Go to Project

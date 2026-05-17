@@ -83,7 +83,7 @@ export default function App() {
             </div>
 
             <a 
-            href="/" target="_blank" rel="noreferrer" 
+            href="https://github.com/JemScripts" target="_blank" rel="noreferrer" 
             className="text-slate-600
               hover:text-black
                 transition-colors
