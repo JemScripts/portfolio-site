@@ -15,17 +15,32 @@ public class DomainHealthService
         _healthScore = healthScore;
     }
 
+    private static string NormaliseDomain(string input)
+    {
+        var value = input.Trim();
+
+        if(!value.StartsWith("http://") && !value.StartsWith("https://"))
+        {
+            value = "https://" + value;
+        }
+
+        if (!Uri.TryCreate(value, UriKind.Absolute, out var uri))
+        {
+            return input.Trim();
+        }
+
+        return uri.Host;
+    }
+
     public async Task<DomainHealthResponse> CheckDomain(string domain)
     {
+        domain = NormaliseDomain(domain);
+
         var response = new DomainHealthResponse
         {
             Domain = domain
         };
-        
-        if (Uri.TryCreate(domain, UriKind.Absolute, out Uri? uri))
-        {
-            domain = uri.Host;
-        }
+
 
         if (string.IsNullOrWhiteSpace(domain))
         {
