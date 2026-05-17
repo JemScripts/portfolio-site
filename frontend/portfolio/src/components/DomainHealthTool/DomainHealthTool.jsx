@@ -5,6 +5,7 @@ import HealthCard from "./HealthCard.jsx";
 import SearchBar from "./SearchBar.jsx";
 import SkeletonCards from "./SkeletonCards.jsx";
 import SpfCard from "./SpfCard.jsx";
+import ExplanationBar from "../Explanations/ExplanationBar.jsx";
 
 const API = import.meta.env.VITE_API_BASE_URL;
 
@@ -96,6 +97,8 @@ export default function DomainHealthTool() {
                     </>
                 )}
             </div>
+            <ExplanationBar question="What does this tool do?" explanation="This tool retrieves the A, MX and TXT records of a domain and detects SPF configuration, which uses a very basic scoring system to determine whether the domain is healthy or not"/>
+            <ExplanationBar question="Placeholder" explanation="We'll see" />
         </div>
     </div>
   );
