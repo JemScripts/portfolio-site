@@ -115,7 +115,7 @@ export default function DomainHealthTool() {
                     <p>An A record simply put is an Address Record. What this means is that it maps a domain name to an IPv4 address to let the server know how to reach your site.</p>
                     <p>If it's misconfigured, the website is no longer reachable and could result in misrouted traffic.</p>
                     <li className="font-bold">What is an MX Record?</li>
-                    <p>MX Records or Mail Exchange records tell the internet which mail servers should receive email for this domain.</p>
+                    <p>MX Records or Mail Exchange records tell the DNS which mail servers should receive email for this domain.</p>
                     <p>If it's misconfigured, your domain will not properly receive mail, which can result in missing important emails, such as password resets or support requests which can be detrimental to a business.</p>
                     <li className="font-bold">What is a TXT Record?</li>
                     <p>TXT Records or text records store text data. These are used for domain verification, email security, anti-spam policies and ownership proof.</p>
